@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "course-work-4"
+version = "0.1.0"
+description = "This course work is about to receive information about vacancies from the hh.ru platform in Russia, save it in a file and work with it more conveniently: add, filter, delete."
+authors = ["DuckRainbow <sillestyna@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
