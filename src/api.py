@@ -5,14 +5,20 @@ import requests
 
 class APIData(ABC):
     @abstractmethod
-    def get_vacancies(self):
+    def get_vacancies(self, *args, **kwargs):
         pass
 
 
 class GetVacancies(APIData):
-    def __init__(self, page_num):
-        self.__url_get = f'http://api.hh.ru/vacancies?per_page=100&page={page_num}'
+    def __init__(self, major):
+        self.major = major
 
     def get_vacancies(self):
-        response = requests.get(self.__url_get)
-        return response.text
+        params = {
+            'per_page' = 100,
+        'search_field' = 'name',
+        'text' = self.major
+        }
+
+        response = requests.get('http://api.hh.ru/vacancies', params=params)
+        return response.json
