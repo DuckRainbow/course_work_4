@@ -1,12 +1,21 @@
 # Функция для взаимодействия с пользователем
+from src.func import filter_city, filter_vacancies, get_vacancies_by_salary, sort_vacancies, get_top_vacancies, \
+    print_vacancies
+
+
 def user_interaction():
     search_query = input("Введите поисковый запрос: ")
     top_n = int(input("Введите количество вакансий для вывода в топ N: "))
-    filter_words = input("Введите ключевые слова для фильтрации вакансий: ").split()
-    salary_range = input("Введите диапазон зарплат: ")  # Пример: 100000 - 150000
+    print('Следующие параметры опциональны, если вам не нужен какой-либо фильтр, напишите "нет" в ответе.\n')
+    city = input('Введите название города')
+    filter_words = input("Введите ключевые слова для фильтрации вакансий(через пробел): ").split(' ')
+    salary_range = input("Введите диапазон зарплат(через пробел): ")  # Пример: 100000 - 150000
 
 
-    filtered_vacancies = filter_vacancies(vacancies_list, filter_words)
+
+    city_vacancies = filter_city(vacancies_list, city)
+
+    filtered_vacancies = filter_vacancies(city_vacancies, filter_words)
 
     ranged_vacancies = get_vacancies_by_salary(filtered_vacancies, salary_range)
 
