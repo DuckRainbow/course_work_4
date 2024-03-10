@@ -1,7 +1,8 @@
 class Vacancy:
     vacancy_id = 0
 
-    def __init__(self, title, url, salary_from, salary_to, description, requirements):
+    def __init__(self, title, city, url, salary_from, salary_to, description, requirements):
+        self.city = city
         self.title = title
         self.url = url
         self.salary_from = salary_from
@@ -26,3 +27,10 @@ class Vacancy:
 
     def __lt__(self, other):
         return self.salary > other.salary
+
+    def __str__(self):
+        return (f'Вакансия {self.title}, город - {self.city}, зарплата от {self.salary_from} до {self.salary_to}, '
+                f'описание: {self.description}, требования: {self.requirements}, ссылка на вакансию: {self.url}\n')
+
+    def __repr__(self):
+        return f'Вакансия №{self.vacancy_id}, {self.title}'
