@@ -13,7 +13,7 @@ def filter_vacancies(city_vacancies, filter_words):
         new_list = []
         for vacancy in city_vacancies:
             for words in filter_words:
-                if words in vacancy.description:
+                if words in vacancy.description or words in vacancy.requirements:
                     new_list.append(vacancy)
         return new_list
     return city_vacancies
