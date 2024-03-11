@@ -26,7 +26,8 @@ def test_salary():
 
 
 def test_lt():
-    assert some_vacancy > other_vacancy == False
+    is_lt = (some_vacancy < other_vacancy)
+    assert is_lt == True
 
 
 def test_str():

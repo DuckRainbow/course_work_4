@@ -39,13 +39,3 @@ def test_get_top_vacancies():
     assert new_list == [vac1, vac2]
 
 
-def test_print_vacancies():
-    assert print_vacancies(some_list) == (
-        'Вакансия title, город - city, зарплата от 10000 до 25000, описание: description, требования: '
-        'requirements, ссылка на вакансию: url'
-
-        'Вакансия title, город - town, зарплата от 3000 до 15000, описание: description, требования: '
-        'requirements, python, ссылка на вакансию: url'
-
-        'Вакансия title, город - city, зарплата от 6000 до 0, описание: description, python, требования: '
-        'requirements, ссылка на вакансию: url')

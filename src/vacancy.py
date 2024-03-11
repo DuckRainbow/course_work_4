@@ -26,11 +26,11 @@ class Vacancy:
         return self.salary_from
 
     def __lt__(self, other):
-        return self.salary > other.salary
+        return self.salary < other.salary
 
     def __str__(self):
         return (f'Вакансия {self.title}, город - {self.city}, зарплата от {self.salary_from} до {self.salary_to}, '
                 f'описание: {self.description}, требования: {self.requirements}, ссылка на вакансию: {self.url}\n')
 
-    def __repr__(self):
-        return f'Вакансия №{self.vacancy_id}, {self.title}'
+    # def __repr__(self):
+    #     return f'Вакансия №{self.vacancy_id}, {self.title}'
