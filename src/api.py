@@ -17,7 +17,8 @@ class GetVacancies(APIData):
         params = {
             'per_page': 100,
             'search_field': 'name',
-            'text': self.major
+            'text': self.major,
+            'currency': 'RUB'
         }
 
         response = requests.get('http://api.hh.ru/vacancies', params=params)
