@@ -32,5 +32,5 @@ class Vacancy:
         return (f'Вакансия {self.title}, город - {self.city}, зарплата от {self.salary_from} до {self.salary_to}, '
                 f'описание: {self.description}, требования: {self.requirements}, ссылка на вакансию: {self.url}\n')
 
-    # def __repr__(self):
-    #     return f'Вакансия №{self.vacancy_id}, {self.title}'
+    def __repr__(self):
+        return f'Вакансия №{self.vacancy_id}, {self.title}'
