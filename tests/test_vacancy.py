@@ -35,5 +35,6 @@ def test_str():
                                  'описание: description, требования: requirements, ссылка на вакансию: '
                                  'url\n')
 
+
 def test_repr():
     assert repr(other_vacancy) == 'Вакансия №2, title'

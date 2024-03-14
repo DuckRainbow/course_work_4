@@ -14,12 +14,12 @@ class GetVacancies(APIData):
         self.major = major
 
     def get_vacancies(self):
-        params = {
-            'per_page': 100,
-            'search_field': 'name',
-            'text': self.major,
-            'currency': 'RUB'
-        }
+        # params = {
+        #     'per_page': 100,
+        #     'text': self.major,
+        #     'search_field': 'name'
+        #     # 'currency': 'RUB'
+        # }
 
-        response = requests.get('http://api.hh.ru/vacancies', params=params)
-        return response.json
+        response = requests.get(f'http://api.hh.ru/vacancies?text={self.major}&search_field=name')
+        return response.json()

@@ -20,5 +20,5 @@ class SaveToJSON(Save):
 
     def show(self):
         with open(self.file_path, 'r', encoding='utf-8') as f:
-            data_to_show: str = f.read(self.data_to_save)
-        return json.load(data_to_show)
+            data_to_show = json.load(f)
+        return data_to_show
