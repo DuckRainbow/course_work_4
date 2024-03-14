@@ -25,22 +25,19 @@ def user_interaction():
 
     for vacancy in vacancies_list_json:
         vacancies_list.append(
-            Vacancy(vacancy['name'], vacancy['area']['name'], vacancy['alternate_url'], vacancy['salary'], vacancy['snippet']['responsibility'], vacancy['snippet']['requirement']))
+            Vacancy(vacancy['name'], vacancy['area']['name'], vacancy['alternate_url'], vacancy['salary'],
+                    vacancy['snippet']['responsibility'], vacancy['snippet']['requirement']))
 
-    print(vacancies_list)
     city_vacancies = filter_city(vacancies_list, city)
-    print(city_vacancies)
 
     filtered_vacancies = filter_vacancies(city_vacancies, filter_words)
-    print(filtered_vacancies)
 
     ranged_vacancies = get_vacancies_by_salary(filtered_vacancies, salary_range)
-    print(ranged_vacancies)
 
     sorted_vacancies = sort_vacancies(ranged_vacancies)
-    print(sorted_vacancies)
+
     top_vacancies = get_top_vacancies(sorted_vacancies, top_n)
-    print(top_vacancies)
+
     print_vacancies(top_vacancies)
 
 
