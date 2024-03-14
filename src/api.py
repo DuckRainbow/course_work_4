@@ -22,4 +22,4 @@ class GetVacancies(APIData):
         }
 
         response = requests.get('http://api.hh.ru/vacancies', params=params)
-        return response.json
+        return response.json()
